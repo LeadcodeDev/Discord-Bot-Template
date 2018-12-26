@@ -63,6 +63,6 @@ fs.readdir("./commands/", (err, files) => {
     })
 })
 
-client.login("NDcwNjgzNzQ5ODYwOTAwODg0.Dvpiag.AeTYSHDSxaXoclTyebstvwIkLF4");
+client.login("Your token");
 
 client.on('error', console.error);
