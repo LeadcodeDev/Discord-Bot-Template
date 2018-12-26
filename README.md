@@ -1,4 +1,4 @@
-# Ice Command Line Interface (ICLI)
+# Discord Bot Template
 This template was created in order to avoid the redundant phase of the early design of a bot discord.
 
 This template separates events and commands from the main bot discord file.
@@ -9,14 +9,14 @@ Do not forget to modify the token of your bot to make it work under the good ide
 
 In order to download the template, please first download Node.js and Ice Command Line Interface.
 
-`` `
+```
 npm i -g ice-command-line-interface
-`` `
+```
 
 Once done, download the template from a command prompt
-`` `
+```
 ice new <project_name>
-`` `
+```
 
 Thanks for reading. do not hesitate to return the errors if you meet.
 
