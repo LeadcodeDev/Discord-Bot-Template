@@ -10,7 +10,7 @@ To use the Ice Command Line Interface, you must have Node on your computer
 You should install ICLI
 
 ```
-npm install -g ICLI
+npm i ice-command-line-interface
 ```
 
 Open a new command prompt and use the following command
