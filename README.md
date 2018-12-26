@@ -1,29 +1,24 @@
 # Ice Command Line Interface (ICLI)
-Ice Command Line Interface is a new method to easily create a new bot discord. Indeed, ICLI allows you to import a healthy development database so that you can easily create your bot discord.
+This template was created in order to avoid the redundant phase of the early design of a bot discord.
 
-### Prerequisites
+This template separates events and commands from the main bot discord file.
 
-To use the Ice Command Line Interface, you must have Node on your computer
+In this way, you can easily manage the modules of your bot.
 
-### Installing
+Do not forget to modify the token of your bot to make it work under the good identifier.
 
-You should install ICLI
+In order to download the template, please first download Node.js and Ice Command Line Interface.
 
-```
-npm i ice-command-line-interface
-```
+`` `
+npm i -g ice-command-line-interface
+`` `
 
-Open a new command prompt and use the following command
+Once done, download the template from a command prompt
+`` `
+ice new <project_name>
+`` `
 
-```
-ice new <your project name>
-```
-
-> Note : There should be no space in the project name, privilege underscores
-
-```
-ice new my_project
-```
+Thanks for reading. do not hesitate to return the errors if you meet.
 
 ## Built With
 
