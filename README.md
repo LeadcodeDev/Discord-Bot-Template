@@ -32,7 +32,7 @@ ice new my_project
 
 ## Authors
 
-* **Freeze** - *Initial work* - [read more](https://github.com/PurpleBooth)
+* **Freeze** - *Initial work* - [read more](https://github.com/Freeze455)
 
 ## License
 
