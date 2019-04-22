@@ -15,7 +15,7 @@ npm i -g ice-command-line-interface
 
 Once done, download the template from a command prompt
 ```
-ice new <project_name>
+ice make:project <project_name>
 ```
 
 Thanks for reading. do not hesitate to return the errors if you meet.
