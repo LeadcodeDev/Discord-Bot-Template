@@ -1,5 +1,5 @@
 # Discord Bot Template
-[![Node](https://img.shields.io/badge/Node-v10.15.3-informational.svg)](https://nodejs.org/fr/)
+[![Node](https://img.shields.io/badge/Node-v10.15.3-green.svg)](https://nodejs.org/fr/)
 [![Discord.js](https://img.shields.io/badge/discord.js-11.4.2-blue.svg)](https://discord.js.org/#/docs/main/stable/general/welcome)
 
 This template was created in order to avoid the redundant phase of the early design of a bot discord.
