@@ -13,7 +13,7 @@ Do not forget to modify the token of your bot to make it work under the good ide
 In order to download the template, please first download Node.js and Ice Command Line Interface.
 
 ```
-npm i crystal-manager
+npm i -g crystal-manager
 ```
 
 Once done, download the template from a command prompt
