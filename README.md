@@ -13,12 +13,12 @@ Do not forget to modify the token of your bot to make it work under the good ide
 In order to download the template, please first download Node.js and Ice Command Line Interface.
 
 ```
-npm i -g ice-command-line-interface
+npm i crystal-manager
 ```
 
 Once done, download the template from a command prompt
 ```
-ice make:project <project_name>
+crystal make:project <project_name>
 ```
 
 Thanks for reading. do not hesitate to return the errors if you meet.
