@@ -1,16 +1,15 @@
-const Discord = require('discord.js');
-const Enmap = require("enmap");
-const fs = require("fs");
-const chalk = require('chalk');
-const moment = require('moment');
-const dotent = require('dotenv').config();
+const Discord = require('discord.js')
+const Enmap = require("enmap")
+const fs = require("fs")
+const chalk = require('chalk')
+const moment = require('moment')
+const dotent = require('dotenv').config()
 const env = process.env
 
-const client = new Discord.Client();
+const client = new Discord.Client()
 
 
-console.log(chalk.cyan('Starting ...'));
-console.log(env.ALLOW_LOGS);
+console.log(chalk.cyan('Starting ...'))
 
 // Reads the /events/ folder and attaches each event file to the appropriate event.
 fs.readdir("./events/", (err, files) => {
@@ -66,6 +65,4 @@ fs.readdir("./commands/", (err, files) => {
     })
 })
 
-client.login(env.BOT_TOKEN);
-
-client.on('error', console.error);
+client.login(env.BOT_TOKEN)
