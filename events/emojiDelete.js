@@ -1,3 +1,3 @@
-module.exports = (client, emoji) => {
+module.exports = async (client, emoji) => {
     // Your code
 }

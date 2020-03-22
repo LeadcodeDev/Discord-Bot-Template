@@ -1,3 +1,3 @@
-module.exports = (client, oldGuild, newGuild) => {
+module.exports = async (client, oldGuild, newGuild) => {
     // Your code
 }

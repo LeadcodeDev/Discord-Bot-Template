@@ -1,3 +1,3 @@
-module.exports = (client, oldEmoji, newEmoji) => {
+module.exports = async (client, oldEmoji, newEmoji) => {
     // Your code
 }

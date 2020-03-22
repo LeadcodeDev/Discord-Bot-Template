@@ -1,3 +1,3 @@
-module.exports = (client, rateLimitInfo) => {
+module.exports = async (client, rateLimitInfo) => {
     // Your code
 }

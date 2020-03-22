@@ -1,3 +1,3 @@
-module.exports = (client, messageReaction, user) => {
+module.exports = async (client, messageReaction, user) => {
     // Your code
 }

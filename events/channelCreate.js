@@ -1,3 +1,3 @@
-module.exports = (client, channel) => {
+module.exports = async (client, channel) => {
     // Your code
 }

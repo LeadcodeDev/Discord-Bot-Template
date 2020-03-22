@@ -6,63 +6,56 @@ const moment = require('moment')
 const dotent = require('dotenv').config()
 const env = process.env
 
+const Debug = require('./utils/Debug')
+
 const client = new Discord.Client()
+client.commands = new Enmap()
 
+Debug.logs(chalk.cyan('Starting ...'))
 
-console.log(chalk.cyan('Starting ...'))
-
-// Reads the /events/ folder and attaches each event file to the appropriate event.
 fs.readdir("./events/", (err, files) => {
+    Debug.logs(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.cyan('Loading events ...')}`)
 
-    console.log(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.cyan('Loading events ...')}`)
+    if (err) return Debug.logs(err)
 
-    if (err) return console.error(err)
-
-
-    files.forEach(file => {
-
-        if (!file.endsWith(".js")) return
-
-        // Load the event file
-        const event = require(`./events/${file}`)
-
-        // Get the event name
-        let eventName = file.split(".")[0]
-
-        // scall events with all their proper arguments *after* the `client` var.
-        client.on(eventName, event.bind(null, client))
-        delete require.cache[require.resolve(`./events/${file}`)]
-
-        console.log(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.green('Loaded')} event ${chalk.cyan(file)}`)
-
+    files.forEach(async (file) => {
+        if (file.endsWith(".js")) {
+            const event = require(`./events/${file}`)
+            let eventName = file.split(".")[0]
+            try {
+                client.on(eventName, event.bind(null, client))
+                delete require.cache[require.resolve(`./events/${file}`)]
+                Debug.logs(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.green('Loaded')} event ${chalk.cyan(file)}`)
+            } catch (error) {
+                Debug.logs(error)
+            }
+        } else {
+            return
+        }
     })
 })
 
-client.commands = new Enmap();
-
-fs.readdir("./commands/", (err, files) => {
-
-    console.log(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.cyan('Loading commands ...')}`)
-
-    if (err) return console.error(err)
-
-
-    files.forEach(file => {
-
-      if (!file.endsWith(".js")) return
-
-      // Load the command file
-      let props = require(`./commands/${file}`)
-
-      // Get command name
-      let commandName = file.split(".")[0]
-
-      // Storing in the Enmap
-      client.commands.set(commandName, props)
-
-      console.log(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.green('Loaded')} command ${chalk.cyan(commandName)}`)
-
-    })
+fs.readdir("./commands/", async (err, files) => {
+    Debug.logs(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.cyan('Loading commands ...')}`)
+    
+    if (!err) {
+        await files.forEach((file) => {
+            if (file.endsWith(".js")) {
+                let props = require(`./commands/${file}`)
+                let commandName = file.split(".")[0]
+                try {
+                    client.commands.set(commandName, props)
+                    Debug.logs(`[${chalk.cyan(moment(Date.now()).format('h:mm:ss'))}] ${chalk.green('Loaded')} command ${chalk.cyan(commandName)}`)
+                } catch (error) {
+                    Debug.logs(error)
+                }                 
+            } else {
+                return
+            }
+        })
+    } else {
+        return Debug.logs(err)
+    }
 })
 
 client.login(env.BOT_TOKEN)

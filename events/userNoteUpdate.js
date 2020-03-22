@@ -1,3 +1,3 @@
-module.exports = (client, user, oldNote, newNote) => {
+module.exports = async (client, user, oldNote, newNote) => {
     // Your code
 }

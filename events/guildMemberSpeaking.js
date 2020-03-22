@@ -1,3 +1,3 @@
-module.exports = (client, member, speaking) => {
+module.exports = async (client, member, speaking) => {
     // Your code
 }

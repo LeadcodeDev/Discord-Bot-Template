@@ -1,3 +1,3 @@
-module.exports = (client, oldRole, newRole) => {
+module.exports = async (client, oldRole, newRole) => {
     // Your code
 }
